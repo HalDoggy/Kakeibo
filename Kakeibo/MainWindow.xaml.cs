@@ -24,5 +24,12 @@ namespace Kakeibo
         {
             InitializeComponent();
         }
+
+        private void SpecifyCardStatement(object sender, RoutedEventArgs e)
+        {
+            var win = new SpecifyCardStatement();
+            win.Owner = GetWindow(this);
+            win.ShowDialog();
+        }
     }
 }

@@ -1,0 +1,15 @@
+﻿<Window x:Class="Kakeibo.SpecifyCardStatement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kakeibo"
+        mc:Ignorable="d"
+        Title="SpecifyCardStatement" Height="270" Width="350">
+    <Grid>
+        <ComboBox x:Name="comboBox_CardCompany" ItemsSource="{Binding CardCompanies}" HorizontalAlignment="Left" Margin="32,46,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_CardCompany_SelectionChanged"/>
+        <TextBox x:Name="textBox_Path" HorizontalAlignment="Left" Margin="32,167,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+        <Button x:Name="button_SpecifyPath" Content="Select statement file..." HorizontalAlignment="Left" Margin="32,131,0,0" VerticalAlignment="Top" Click="SpecifyPath" IsEnabled="False"/>
+
+    </Grid>
+</Window>

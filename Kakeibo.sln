@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kakeibo", "Kakeibo\Kakeibo.csproj", "{2D413009-3A68-41E8-B3CD-EDEED953712A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consts", "Consts\Consts.csproj", "{DA78E409-C9F1-4886-AD82-3E7777ADC9B0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{38602968-6BDB-4B6B-A0C3-6C828A81FE53}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProcess", "DataProcess", "{25AD45D8-8D58-4D7D-B70B-A7F651534AB7}"
@@ -15,27 +11,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{4C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{D9FAAF2B-D8F8-413F-979C-737BFA0E1A3C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consts", "src\Consts\Consts.csproj", "{666D7C54-20B6-44AF-A187-ABD6F0849DB6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kakeibo", "src\Kakeibo\Kakeibo.csproj", "{3A1935CA-6DED-4933-B557-9FA454D426FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2D413009-3A68-41E8-B3CD-EDEED953712A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D413009-3A68-41E8-B3CD-EDEED953712A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D413009-3A68-41E8-B3CD-EDEED953712A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D413009-3A68-41E8-B3CD-EDEED953712A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA78E409-C9F1-4886-AD82-3E7777ADC9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA78E409-C9F1-4886-AD82-3E7777ADC9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA78E409-C9F1-4886-AD82-3E7777ADC9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA78E409-C9F1-4886-AD82-3E7777ADC9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{666D7C54-20B6-44AF-A187-ABD6F0849DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{666D7C54-20B6-44AF-A187-ABD6F0849DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{666D7C54-20B6-44AF-A187-ABD6F0849DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{666D7C54-20B6-44AF-A187-ABD6F0849DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A1935CA-6DED-4933-B557-9FA454D426FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A1935CA-6DED-4933-B557-9FA454D426FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A1935CA-6DED-4933-B557-9FA454D426FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A1935CA-6DED-4933-B557-9FA454D426FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2D413009-3A68-41E8-B3CD-EDEED953712A} = {38602968-6BDB-4B6B-A0C3-6C828A81FE53}
-		{DA78E409-C9F1-4886-AD82-3E7777ADC9B0} = {D9FAAF2B-D8F8-413F-979C-737BFA0E1A3C}
+		{666D7C54-20B6-44AF-A187-ABD6F0849DB6} = {D9FAAF2B-D8F8-413F-979C-737BFA0E1A3C}
+		{3A1935CA-6DED-4933-B557-9FA454D426FF} = {38602968-6BDB-4B6B-A0C3-6C828A81FE53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36842A0F-4F7B-4E2F-8FA1-1987B2DB5C02}

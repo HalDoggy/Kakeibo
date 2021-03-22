@@ -1,0 +1,19 @@
+@startuml
+
+package "U I" {
+  class Kakeibo
+  {
+
+  }
+
+}
+
+package DataProcess {
+  class B
+}
+
+package DataBase {
+  class C
+}
+
+@enduml

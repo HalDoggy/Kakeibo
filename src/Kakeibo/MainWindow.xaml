@@ -7,7 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="button_specifyCardStatement" Content="Select Card Statement" HorizontalAlignment="Left" Margin="81,93,0,0" VerticalAlignment="Top" AutomationProperties.AutomationId="button_specifyCardStatement" Click="SpecifyCardStatement"/>
+        <Ribbon >
+            <RibbonTab Header="描画">
+                <RibbonGroup x:Name="GroupA" Header="GroupA">
+                    <RibbonButton x:Name="SSS" Label="AAA" />
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="データ入力">
+                <RibbonGroup x:Name="GroupB" Header="GroupA">
+                    <RibbonButton x:Name="DDD" Label="AAA" />
+
+                    <RibbonButton x:Name="Input_statement" Label="明細登録" Width="70" LargeImageSource="Image/statement.png" Click="SpecifyCardStatement"/>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        
+        <!--<TabControl x:Name="tabControl">
+            <TabItem Header="View">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="button_specifyCardStatement" Content="Select Card Statement" HorizontalAlignment="Left" Margin="81,93,0,0" VerticalAlignment="Top" AutomationProperties.AutomationId="button_specifyCardStatement" Click="SpecifyCardStatement"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Data Input">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="button_specifyCardStatement" Content="Select Card Statement" HorizontalAlignment="Left" Margin="81,93,0,0" VerticalAlignment="Top" AutomationProperties.AutomationId="button_specifyCardStatement" Click="SpecifyCardStatement"/>
+                </Grid>
+            </TabItem>
+        </TabControl>-->
 
     </Grid>
 </Window>

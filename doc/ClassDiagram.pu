@@ -6,14 +6,44 @@ package "U I" {
 
   }
 
+  class SpecifyCardStatement
+  {
+
+  }
 }
 
 package DataProcess {
-  class B
+  interface IStatement{
+    +GetSheet() : DataSet
+    +GetCompany() : CardCompanies
+  }
+
+  class Statement{
+    +ctor(CardCompanies company, string path)
+  }
+
+  interface IEdit{
+    +Editable() : bool
+    +Edit() : CardCompanies
+  }
 }
 
 package DataBase {
-  class C
+  class DataSet{}
+
+  class StatementDataSet{
+    
+  }
 }
+
+
+IStatement <|-- Statement
+IEdit <|-- Statement
+
+SpecifyCardStatement --> IStatement
+Kakeibo --> IEdit
+
+
+DataSet <|-- StatementDataSet
 
 @enduml

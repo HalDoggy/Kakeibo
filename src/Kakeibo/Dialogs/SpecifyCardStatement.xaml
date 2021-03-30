@@ -10,6 +10,7 @@
         <ComboBox x:Name="comboBox_CardCompany" ItemsSource="{Binding CardCompanies}" HorizontalAlignment="Left" Margin="32,46,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_CardCompany_SelectionChanged"/>
         <TextBox x:Name="textBox_Path" HorizontalAlignment="Left" Margin="32,167,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
         <Button x:Name="button_SpecifyPath" Content="Select statement file..." HorizontalAlignment="Left" Margin="32,131,0,0" VerticalAlignment="Top" Click="SpecifyPath" IsEnabled="False"/>
+        <Button x:Name="button" Content="Submit" HorizontalAlignment="Left" Margin="32,221,0,0" VerticalAlignment="Top" Click="Submit"/>
 
     </Grid>
 </Window>

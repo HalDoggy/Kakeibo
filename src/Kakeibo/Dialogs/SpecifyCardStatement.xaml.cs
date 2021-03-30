@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using Consts;
+using StatementProcessor;
 
 namespace Kakeibo
 {
@@ -42,6 +43,13 @@ namespace Kakeibo
         private void comboBox_CardCompany_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             button_SpecifyPath.IsEnabled = comboBox_CardCompany.SelectedItem != null;
+        }
+
+        private void Submit(object sender, RoutedEventArgs e)
+        {
+            StatementFactory factory = new StatementFactory();
+            Statement statement = factory.Create(textBox_Path.Text, (Constants.CardCompanies)comboBox_CardCompany.SelectedItem);
+            // TODO : return statement object to somewhere
         }
     }
 }

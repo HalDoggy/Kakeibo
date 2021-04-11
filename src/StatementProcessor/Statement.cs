@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Consts;
+using StatementProcessor.payment;
 
 namespace StatementProcessor
 {
@@ -14,7 +15,7 @@ namespace StatementProcessor
         private string extension;
 
         private IConverter converter;
-        private System.Data.DataSet dataSet;
+        private List<Payment> dataSet;
 
         public Statement(string statementPath, Constants.CardCompanies company)
         {
@@ -29,12 +30,14 @@ namespace StatementProcessor
 
         public string Extension { get { return extension; } }
 
+        public List<Payment> DataSet { get => dataSet; }
+
         internal void SetConverter(IConverter converter)
         {
             this.converter = converter;
             dataSet = ConvretToDataSet();
         }
 
-        private System.Data.DataSet ConvretToDataSet() { return converter.Do(); }
+        private List<Payment> ConvretToDataSet() { return converter.Do(StatementPath); }
     }
 }

@@ -28,5 +28,20 @@ namespace Consts
                     throw new InvalidCastException();
             }
         }
+
+        public enum Category
+        {
+            Food,
+            FurnitureAndAppliances,
+            Water,
+            Gas,
+            Electricity,
+            Entertainment,
+            Communication,
+            Stock,
+            Clothes,
+            Book,
+            NULL
+        }
     }
 }

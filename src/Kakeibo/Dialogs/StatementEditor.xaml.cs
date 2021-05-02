@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
 using Consts;
 using StatementProcessor;
 using StatementProcessor.payment;
@@ -22,75 +24,70 @@ namespace Kakeibo.Dialogs
     /// </summary>
     public partial class StatementEditor : Window
     {
-        private TestDataSet tds;
-        private List<Payment> payments;
         public string[] categoryList;
         public StatementEditor(Statement statement)
         {
             InitializeComponent();
-
-            payments = statement.DataSet;
-            categoryList = Enum.GetNames(typeof(Constants.Category));
-
-            var c = new TestData();
-            tds = new TestDataSet();
-            dataGrid.DataContext = this;
-            //dataGrid.ItemsSource = statement.DataSet;
-            
-        }
-
-        public List<Payment> Payments
-        {
-            get => payments;
+            this.DataContext = new StatementViewModel(statement);
+            StoreCol.IsReadOnly = true;
         }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            int w = tds.Set[0].Who;
+            // non-implement
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            // non-implement
+        }
+
+        private void AddRow_()
+        {
+            var p = new Payment();
+            p._Date = DateTime.Now;
+            ((StatementViewModel)DataContext).Payments.Add(p);
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            AddRow_();
         }
     }
 
-    public class ViewModel
+    public class StatementViewModel : INotifyPropertyChanged
     {
-        public TestDataSet _Model = new TestDataSet();
-    }
+        private ObservableCollection<Payment> payments;
+        private ObservableCollection<Constants.Category> categories;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-    public class TestDataSet
-    {
-        public List<TestData> Set = new List<TestData> { new TestData() };
-    }
-
-    public class TestData
-    {
-        private int who;
-        private DateTime dt = DateTime.Now.Date;
-        public string Date { 
-            get 
-            {
-                return dt.ToString("d");
-            }  
+        public ObservableCollection<Payment> Payments
+        {
+            get => payments;
         }
-        public DateTime _Date { get { return dt; } set { dt = value; } }
 
-        public Consts.Constants.Category Money { get; set; }
-        public int Who {
-            get { return who; }
-            set
+        public ObservableCollection<Constants.Category> GetCategories
+        {
+            get
             {
-                if (true)
+                if (categories != null) return categories;
+
+                categories = new ObservableCollection<Constants.Category>();
+                Constants.Category[] cats = Enum.GetValues(typeof(Constants.Category)).Cast<Constants.Category>().ToArray();
+                foreach(Constants.Category _c in cats)
                 {
-                    return;
+                    categories.Add(_c);
                 }
-                else
-                {
-                    who = value;
-                }
+                return categories;
             }
         }
 
-        public bool RO { get { return true; } }
+        public StatementViewModel(Statement statement)
+        {
+            this.payments = statement.DataSet;
+        }
 
-        public TestData()
+        public StatementViewModel()
         {
 
         }

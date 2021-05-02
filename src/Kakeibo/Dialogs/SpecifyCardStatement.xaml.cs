@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using Consts;
 using StatementProcessor;
+using Kakeibo.Dialogs;
 
 namespace Kakeibo
 {
@@ -49,7 +50,11 @@ namespace Kakeibo
         {
             StatementFactory factory = new StatementFactory();
             Statement statement = factory.Create(textBox_Path.Text, (Constants.CardCompanies)comboBox_CardCompany.SelectedItem);
-            // TODO : return statement object to somewhere
+            
+            var win = new StatementEditor(statement);
+            //var win = new StatementEditor();
+            win.Owner = GetWindow(this);
+            win.ShowDialog();
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using StatementProcessor.payment;
 
 namespace StatementProcessor
 {
     interface IConverter
     {
-        List<Payment> Do(string dataPath);
+        ObservableCollection<Payment> Do(string dataPath);
     }
 }

@@ -3,7 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using Consts;
 using StatementProcessor.payment;
 
@@ -17,9 +17,9 @@ namespace StatementProcessor
             this.extention = extention;
         }
 
-        public List<Payment> Do(string dataPath)
+        public ObservableCollection<Payment> Do(string dataPath)
         {
-            List<Payment> returnValue;
+            ObservableCollection<Payment> returnValue;
 
             switch (extention)
             {
@@ -34,12 +34,12 @@ namespace StatementProcessor
             return returnValue;
         }
 
-        private List<Payment> ConvertFromCSV(string dataPath)
+        private ObservableCollection<Payment> ConvertFromCSV(string dataPath)
         {
             string[] contents;
             int rowNum = 0;
             //Payment payment;
-            List<Payment> payments = new List<Payment>();
+            ObservableCollection<Payment> payments = new ObservableCollection<Payment>();
             DateTime t;
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             using (StreamReader reader = new StreamReader(dataPath, Encoding.GetEncoding(932))) //Shift_JIS

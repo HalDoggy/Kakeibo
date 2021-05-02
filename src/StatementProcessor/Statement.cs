@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using Consts;
 using StatementProcessor.payment;
 
@@ -15,7 +15,7 @@ namespace StatementProcessor
         private string extension;
 
         private IConverter converter;
-        private List<Payment> dataSet;
+        private ObservableCollection<Payment> dataSet;
 
         public Statement(string statementPath, Constants.CardCompanies company)
         {
@@ -30,7 +30,7 @@ namespace StatementProcessor
 
         public string Extension { get { return extension; } }
 
-        public List<Payment> DataSet { get => dataSet; }
+        public ObservableCollection<Payment> DataSet { get => dataSet; }
 
         internal void SetConverter(IConverter converter)
         {
@@ -38,6 +38,6 @@ namespace StatementProcessor
             dataSet = ConvretToDataSet();
         }
 
-        private List<Payment> ConvretToDataSet() { return converter.Do(StatementPath); }
+        private ObservableCollection<Payment> ConvretToDataSet() { return converter.Do(StatementPath); }
     }
 }

@@ -6,14 +6,53 @@ package "U I" {
 
   }
 
+  class SpecifyCardStatement
+  {
+
+  }
 }
 
 package DataProcess {
-  class B
+  interface IConverter{
+  }
+
+  Class ConverterVPass{
+  }
+
+  Class ConverterOtherCompany{
+  }
+
+  class Statement{
+  }
+
+  class StatementFactory{
+  }
+
+  ' class Edit{
+  '   +Editable() : bool
+  '   +Edit() : CardCompanies
+  ' }
 }
 
 package DataBase {
-  class C
+  class DataSet{}
+
+  class StatementDataSet{
+    
+  }
 }
+
+
+
+SpecifyCardStatement --> StatementFactory
+
+StatementFactory --> Statement
+
+Statement --> IConverter
+
+DataSet <|-- StatementDataSet
+
+IConverter <|-- ConverterVPass
+IConverter <|-- ConverterOtherCompany
 
 @enduml

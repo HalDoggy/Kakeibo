@@ -15,7 +15,7 @@ namespace StatementProcessor.payment
         bool amountEditoble = true;
         bool categoryEditoble = true;
 
-
+        public virtual int Id { get; set; }
         public virtual string Date { get { return _Date.ToString("d"); } }
         public virtual DateTime _Date { get; set; }
         public virtual bool DateEditoble { get => dateEditoble; protected set { dateEditoble = value;  } }
@@ -39,6 +39,10 @@ namespace StatementProcessor.payment
                 string computedString = _Date + Store + Amount.ToString() + Category.ToString() + RowNumOfStatement.ToString();
                 SHA256 myHash = SHA256.Create();
                 return computedString.GetHashCode();
+            }
+            private set
+            {
+
             }
         }
     }

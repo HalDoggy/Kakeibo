@@ -25,12 +25,12 @@
                 <DataGridTemplateColumn Header="Date">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Date}" />
+                            <TextBlock Text="{Binding Date, StringFormat=yyyy/MM/dd}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <DatePicker SelectedDate="{Binding _Date, Mode=TwoWay}" BorderThickness="0" IsEnabled="{Binding DateEditoble}" />
+                            <DatePicker SelectedDate="{Binding Date, Mode=TwoWay, StringFormat=yyyy/MM/dd}" BorderThickness="0" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>

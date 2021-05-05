@@ -15,7 +15,7 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using Consts;
 using StatementProcessor;
-using StatementProcessor.payment;
+using StatementProcessor.DataStructure;
 
 namespace Kakeibo.Dialogs
 {
@@ -45,7 +45,7 @@ namespace Kakeibo.Dialogs
         private void AddRow_()
         {
             var p = new Payment();
-            p._Date = DateTime.Now;
+            p.Date = DateTime.Now;
             ((StatementViewModel)DataContext).Payments.Add(p);
         }
 

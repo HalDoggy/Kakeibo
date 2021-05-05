@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
 using Consts;
-using StatementProcessor.payment;
+using StatementProcessor.DataStructure;
 
 namespace StatementProcessor
 {

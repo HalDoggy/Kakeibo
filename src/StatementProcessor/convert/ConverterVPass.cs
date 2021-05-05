@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Collections.ObjectModel;
 using Consts;
-using StatementProcessor.payment;
+using StatementProcessor.DataStructure;
 
 namespace StatementProcessor
 {
@@ -52,7 +52,7 @@ namespace StatementProcessor
                     {
                         continue;
                     }
-                    payment._Date = t;
+                    payment.Date = t;
                     payment.Store = contents[1];
                     payment.Amount = int.Parse(contents[2]);
                     payment.RowNumOfStatement = rowNum;

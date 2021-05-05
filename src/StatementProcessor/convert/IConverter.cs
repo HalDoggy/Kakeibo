@@ -1,5 +1,5 @@
 ﻿using System.Collections.ObjectModel;
-using StatementProcessor.payment;
+using StatementProcessor.DataStructure;
 
 namespace StatementProcessor
 {
